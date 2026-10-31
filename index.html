@@ -12,9 +12,9 @@
             theme: {
                 extend: {
                     colors: {
-                        darkBg: '#212121',
-                        cardBg: '#2a2a2a',
-                        cardBorder: '#3f3f46',
+                        darkBg: '#141417',
+                        cardBg: '#1c1c22',
+                        cardBorder: '#2a2a34',
                         yellowAccent: '#ffcc00',
                         yellowLight: '#ffe066',
                         textMain: '#f4f4f5',
@@ -25,29 +25,73 @@
         }
     </script>
     <style>
-        /* Custom scrollbar */
+        /* Custom sleek scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #212121;
+            background: #141417;
         }
         ::-webkit-scrollbar-thumb {
-            background: rgba(255, 204, 0, 0.6);
+            background: rgba(255, 204, 0, 0.5);
             border-radius: 4px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: rgba(255, 204, 0, 1);
+            background: rgba(255, 204, 0, 0.9);
+        }
+
+        /* Clean, Crisp 3D Text Styles */
+        .text-3d-title {
+            color: #ffffff;
+            text-shadow: 
+                1px 1px 0px #000000,
+                2px 2px 0px #000000,
+                3px 3px 6px rgba(0, 0, 0, 0.7);
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.2));
+        }
+
+        .text-3d-neon {
+            color: #ffcc00;
+            text-shadow: 
+                1px 1px 0px #806600,
+                2px 2px 0px #4d3d00,
+                3px 3px 6px rgba(0, 0, 0, 0.8);
+            filter: drop-shadow(0 0 12px rgba(255, 204, 0, 0.5));
+        }
+
+        .text-3d-heading {
+            color: #ffffff;
+            text-shadow: 
+                1px 1px 0px #000000,
+                2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        /* Neon Glow Effects */
+        .neon-box-glow {
+            box-shadow: 0 0 20px rgba(255, 204, 0, 0.15);
+        }
+
+        .neon-box-glow-hover:hover {
+            box-shadow: 0 0 25px rgba(255, 204, 0, 0.3);
+            border-color: rgba(255, 204, 0, 0.6);
+        }
+
+        .neon-btn {
+            box-shadow: 0 0 15px rgba(255, 204, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+        .neon-btn:hover {
+            box-shadow: 0 0 25px rgba(255, 204, 0, 0.6);
         }
     </style>
 </head>
-<body class="bg-[#212121] text-[#f4f4f5] font-sans antialiased selection:bg-[#ffcc00]/20 selection:text-[#ffcc00] overflow-x-hidden relative">
+<body class="bg-[#141417] text-[#f4f4f5] font-sans antialiased selection:bg-[#ffcc00]/20 selection:text-[#ffcc00] overflow-x-hidden relative">
 
     <!-- Navigation Bar -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-[#212121]/90 backdrop-blur-md border-b border-[#333333]">
+    <header class="fixed top-0 left-0 right-0 z-50 bg-[#141417]/90 backdrop-blur-md border-b border-[#2a2a34]">
         <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
-            <a href="#hero" class="text-sm md:text-base font-bold tracking-wider text-[#ffcc00] uppercase flex items-center gap-2">
-                <span class="w-2.5 h-2.5 rounded-full bg-[#ffcc00]"></span>
+            <a href="#hero" class="text-sm md:text-base font-bold tracking-wider text-[#ffcc00] uppercase flex items-center gap-2 filter drop-shadow-[0_0_8px_rgba(255,204,0,0.5)]">
+                <span class="w-2.5 h-2.5 rounded-full bg-[#ffcc00] animate-pulse"></span>
                 <span>Mkrtchyan David</span>
             </a>
             <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-[#a1a1aa]">
@@ -55,7 +99,7 @@
                 <a href="#research" class="hover:text-[#ffcc00] transition-colors">Research & Publication</a>
                 <a href="#future" class="hover:text-[#ffcc00] transition-colors">Future Works</a>
             </nav>
-            <a href="#contact" class="px-4 py-2 text-xs font-semibold uppercase tracking-wider rounded-full border border-[#ffcc00]/40 text-[#ffcc00] hover:bg-[#ffcc00] hover:text-[#212121] transition-all">
+            <a href="#contact" class="px-4 py-2 text-xs font-semibold uppercase tracking-wider rounded-full border border-[#ffcc00]/50 text-[#ffcc00] hover:bg-[#ffcc00] hover:text-[#141417] transition-all neon-btn">
                 Let's Connect
             </a>
         </div>
@@ -66,42 +110,42 @@
 
         <!-- Hero Section -->
         <section id="hero" class="min-h-[70vh] flex flex-col justify-center items-start space-y-6">
-            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-white uppercase leading-tight">
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight uppercase leading-tight text-3d-title">
                 Mkrtchyan David
             </h1>
-            <p class="text-xl md:text-2xl font-medium text-[#ffcc00] max-w-2xl">
+            <p class="text-xl md:text-2xl font-medium max-w-2xl text-3d-neon">
                 Specializing in theoretical physics and quantum computing, exploring quantum algorithms, qubit interactions, and subatomic energy states.
             </p>
             <p class="text-[#a1a1aa] max-w-xl text-base leading-relaxed">
                 Investigating quantum mechanics principles to build advanced algorithmic paradigms and model complex atomic architectures.
             </p>
             <div class="pt-4">
-                <a href="#about" class="px-8 py-4 rounded-xl bg-[#ffcc00] text-[#212121] font-semibold text-sm hover:bg-[#ffe066] transition-all shadow-lg shadow-[#ffcc00]/10">
+                <a href="#about" class="px-8 py-4 rounded-xl bg-[#ffcc00] text-[#141417] font-bold text-sm hover:bg-[#ffe066] transition-all neon-btn inline-block">
                     Explore About Me
                 </a>
             </div>
         </section>
 
-        <!-- About Section with Photo/Visual Side -->
+        <!-- About Section -->
         <section id="about" class="space-y-8">
-            <div class="border-l-4 border-[#ffcc00] pl-4">
-                <h2 class="text-3xl font-bold tracking-tight text-white">About Me</h2>
+            <div class="border-l-4 border-[#ffcc00] pl-4 filter drop-shadow-[0_0_6px_rgba(255,204,0,0.5)]">
+                <h2 class="text-3xl font-bold tracking-tight text-3d-heading">About Me</h2>
             </div>
             
             <div class="grid md:grid-cols-3 gap-6">
                 <!-- Photo Side Panel -->
-                <div class="p-6 rounded-2xl bg-[#2a2a2a] border border-[#383838] flex flex-col items-center justify-center text-center space-y-4 shadow-sm">
-                    <div class="w-36 h-36 rounded-2xl bg-gradient-to-br from-[#333333] to-[#222222] border-2 border-[#ffcc00]/40 flex items-center justify-center text-5xl shadow-inner">
+                <div class="p-6 rounded-2xl bg-[#1c1c22] border border-[#2a2a34] flex flex-col items-center justify-center text-center space-y-4 shadow-sm neon-box-glow">
+                    <div class="w-36 h-36 rounded-2xl bg-[#23232c] border-2 border-[#ffcc00]/50 flex items-center justify-center text-5xl filter drop-shadow-[0_0_12px_rgba(255,204,0,0.4)]">
                         ⚛️
                     </div>
                     <div class="space-y-1">
                         <h3 class="text-lg font-bold text-white">Mkrtchyan David</h3>
-                        <p class="text-xs text-[#ffcc00] font-medium">Theoretical Physics & Quantum Computing</p>
+                        <p class="text-xs text-[#ffcc00] font-medium filter drop-shadow-[0_0_6px_rgba(255,204,0,0.4)]">Theoretical Physics & Quantum Computing</p>
                     </div>
                 </div>
 
                 <!-- Main Text Content -->
-                <div class="md:col-span-2 p-8 rounded-2xl bg-[#2a2a2a] border border-[#383838] space-y-4 shadow-sm flex flex-col justify-between">
+                <div class="md:col-span-2 p-8 rounded-2xl bg-[#1c1c22] border border-[#2a2a34] space-y-4 shadow-sm flex flex-col justify-between">
                     <div class="space-y-4">
                         <p class="text-[#f4f4f5] leading-relaxed text-base">
                             I am a 16-year-old researcher based in Yerevan, Armenia, focusing deeply on theoretical physics and quantum computing. My academic journey centers around quantum information processing, atomic simulations, and exploring complex quantum mechanical phenomena.
@@ -113,45 +157,45 @@
                             My goal is to bridge core physics principles with modern quantum technologies, contributing to local and collaborative research initiatives while expanding educational access in the quantum sciences.
                         </p>
                     </div>
-                    <div class="pt-4 border-t border-[#383838] text-xs text-[#a1a1aa] flex items-center justify-between">
+                    <div class="pt-4 border-t border-[#2a2a34] text-xs text-[#a1a1aa] flex items-center justify-between">
                         <span>Institution: MSKH (Mkhitar Sebastatsi Educational Complex)</span>
-                        <span class="text-[#ffcc00] font-medium">Yerevan, Armenia</span>
+                        <span class="text-[#ffcc00] font-medium filter drop-shadow-[0_0_4px_rgba(255,204,0,0.3)]">Yerevan, Armenia</span>
                     </div>
                 </div>
             </div>
 
             <!-- Core Expertise & Languages Grid -->
             <div class="grid md:grid-cols-3 gap-6">
-                <div class="p-8 rounded-2xl bg-[#2a2a2a] border border-[#383838] flex flex-col justify-between shadow-sm">
+                <div class="p-8 rounded-2xl bg-[#1c1c22] border border-[#2a2a34] flex flex-col justify-between shadow-sm">
                     <div class="space-y-4">
                         <h3 class="text-lg font-semibold text-white">Core Expertise</h3>
                         <ul class="space-y-2 text-sm text-[#a1a1aa]">
-                            <li class="flex items-center gap-2 text-[#f4f4f5]">✓ Quantum Mechanics</li>
-                            <li class="flex items-center gap-2 text-[#f4f4f5]">✓ Quantum Computing & VQE</li>
-                            <li class="flex items-center gap-2 text-[#f4f4f5]">✓ Atomic & Molecular Simulations</li>
-                            <li class="flex items-center gap-2 text-[#f4f4f5]">✓ Subatomic Interactions</li>
+                            <li class="flex items-center gap-2 text-[#f4f4f5]"><span class="text-[#ffcc00] font-bold">✓</span> Quantum Mechanics</li>
+                            <li class="flex items-center gap-2 text-[#f4f4f5]"><span class="text-[#ffcc00] font-bold">✓</span> Quantum Computing & VQE</li>
+                            <li class="flex items-center gap-2 text-[#f4f4f5]"><span class="text-[#ffcc00] font-bold">✓</span> Atomic & Molecular Simulations</li>
+                            <li class="flex items-center gap-2 text-[#f4f4f5]"><span class="text-[#ffcc00] font-bold">✓</span> Subatomic Interactions</li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="md:col-span-2 p-8 rounded-2xl bg-[#2a2a2a] border border-[#383838] shadow-sm space-y-4">
+                <div class="md:col-span-2 p-8 rounded-2xl bg-[#1c1c22] border border-[#2a2a34] shadow-sm space-y-4">
                     <h3 class="text-lg font-semibold text-white">Languages</h3>
                     <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
-                        <div class="p-4 rounded-xl bg-[#212121] border border-[#383838]">
+                        <div class="p-4 rounded-xl bg-[#141417] border border-[#2a2a34] neon-box-glow-hover transition-all">
                             <div class="text-white font-medium">Armenian</div>
-                            <div class="text-[#ffcc00] text-xs mt-1">Fluent (Native)</div>
+                            <div class="text-[#ffcc00] text-xs mt-1 font-semibold">Fluent (Native)</div>
                         </div>
-                        <div class="p-4 rounded-xl bg-[#212121] border border-[#383838]">
+                        <div class="p-4 rounded-xl bg-[#141417] border border-[#2a2a34] neon-box-glow-hover transition-all">
                             <div class="text-white font-medium">English</div>
-                            <div class="text-[#ffcc00] text-xs mt-1">Intermediate</div>
+                            <div class="text-[#ffcc00] text-xs mt-1 font-semibold">Intermediate</div>
                         </div>
-                        <div class="p-4 rounded-xl bg-[#212121] border border-[#383838]">
+                        <div class="p-4 rounded-xl bg-[#141417] border border-[#2a2a34] neon-box-glow-hover transition-all">
                             <div class="text-white font-medium">French</div>
-                            <div class="text-[#ffcc00] text-xs mt-1">Intermediate</div>
+                            <div class="text-[#ffcc00] text-xs mt-1 font-semibold">Intermediate</div>
                         </div>
-                        <div class="p-4 rounded-xl bg-[#212121] border border-[#383838]">
+                        <div class="p-4 rounded-xl bg-[#141417] border border-[#2a2a34] neon-box-glow-hover transition-all">
                             <div class="text-white font-medium">Russian</div>
-                            <div class="text-[#ffcc00] text-xs mt-1">Beginner</div>
+                            <div class="text-[#ffcc00] text-xs mt-1 font-semibold">Beginner</div>
                         </div>
                     </div>
                 </div>
@@ -160,15 +204,15 @@
 
         <!-- Research & Publication Section -->
         <section id="research" class="space-y-8">
-            <div class="border-l-4 border-[#ffcc00] pl-4">
-                <h2 class="text-3xl font-bold tracking-tight text-white">Research & Publication</h2>
+            <div class="border-l-4 border-[#ffcc00] pl-4 filter drop-shadow-[0_0_6px_rgba(255,204,0,0.5)]">
+                <h2 class="text-3xl font-bold tracking-tight text-3d-heading">Research & Publication</h2>
             </div>
             
-            <div class="p-8 md:p-12 rounded-2xl bg-[#2a2a2a] border border-[#383838] space-y-6 shadow-sm relative overflow-hidden">
-                <div class="absolute top-0 right-0 w-48 h-48 bg-[#ffcc00]/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="p-8 md:p-12 rounded-2xl bg-[#1c1c22] border border-[#2a2a34] space-y-6 shadow-sm relative overflow-hidden neon-box-glow">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-[#ffcc00]/10 rounded-full blur-3xl pointer-events-none"></div>
                 
                 <div class="flex flex-wrap items-center justify-between gap-4">
-                    <span class="px-3.5 py-1.5 rounded-full bg-[#ffcc00]/15 border border-[#ffcc00]/30 text-[#ffcc00] text-xs font-semibold">
+                    <span class="px-3.5 py-1.5 rounded-full bg-[#ffcc00]/15 border border-[#ffcc00]/40 text-[#ffcc00] text-xs font-semibold filter drop-shadow-[0_0_8px_rgba(255,204,0,0.3)]">
                         Published Research Paper (Collaborative Work)
                     </span>
                     <span class="text-xs text-[#a1a1aa]">Armenian Scientific Contribution</span>
@@ -191,9 +235,9 @@
                 </div>
 
                 <!-- PDF Link Button -->
-                <div class="pt-6 border-t border-[#383838] flex flex-wrap items-center justify-between gap-4">
+                <div class="pt-6 border-t border-[#2a2a34] flex flex-wrap items-center justify-between gap-4">
                     <span class="text-xs text-[#a1a1aa]">Access the full publication document:</span>
-                    <a href="https://davitmkrtchyan1.wordpress.com/wp-content/uploads/2025/10/mqsim-research.pdf" target="_blank" class="inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-[#ffcc00] text-[#212121] font-bold text-sm hover:bg-[#ffe066] transition-all shadow-md shadow-[#ffcc00]/10">
+                    <a href="https://davitmkrtchyan1.wordpress.com/wp-content/uploads/2025/10/mqsim-research.pdf" target="_blank" class="inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-[#ffcc00] text-[#141417] font-bold text-sm hover:bg-[#ffe066] transition-all neon-btn">
                         <span>📄</span>
                         <span>View Research Paper (PDF)</span>
                     </a>
@@ -201,36 +245,36 @@
             </div>
         </section>
 
-        <!-- Future Works Section (4 Parts) -->
+        <!-- Future Works Section -->
         <section id="future" class="space-y-8">
-            <div class="border-l-4 border-[#ffcc00] pl-4">
-                <h2 class="text-3xl font-bold tracking-tight text-white">Future Works</h2>
+            <div class="border-l-4 border-[#ffcc00] pl-4 filter drop-shadow-[0_0_6px_rgba(255,204,0,0.5)]">
+                <h2 class="text-3xl font-bold tracking-tight text-3d-heading">Future Works</h2>
             </div>
             
             <div class="grid md:grid-cols-2 gap-6">
-                <div class="p-8 rounded-2xl bg-[#2a2a2a] border border-[#383838] space-y-3 shadow-sm">
-                    <div class="text-[#ffcc00] font-bold text-xl">01</div>
+                <div class="p-8 rounded-2xl bg-[#1c1c22] border border-[#2a2a34] space-y-3 shadow-sm neon-box-glow-hover transition-all">
+                    <div class="text-[#ffcc00] font-bold text-xl filter drop-shadow-[0_0_6px_rgba(255,204,0,0.5)]">01</div>
                     <h3 class="text-xl font-bold text-white">Advanced Quantum Algorithms</h3>
                     <p class="text-[#a1a1aa] text-sm leading-relaxed">
                         Expanding beyond standard VQE to design noise-resilient ansatz structures and error mitigation protocols tailored for near-term quantum processors.
                     </p>
                 </div>
-                <div class="p-8 rounded-2xl bg-[#2a2a2a] border border-[#383838] space-y-3 shadow-sm">
-                    <div class="text-[#ffcc00] font-bold text-xl">02</div>
+                <div class="p-8 rounded-2xl bg-[#1c1c22] border border-[#2a2a34] space-y-3 shadow-sm neon-box-glow-hover transition-all">
+                    <div class="text-[#ffcc00] font-bold text-xl filter drop-shadow-[0_0_6px_rgba(255,204,0,0.5)]">02</div>
                     <h3 class="text-xl font-bold text-white">Multi-Electron Systems</h3>
                     <p class="text-[#a1a1aa] text-sm leading-relaxed">
                         Scaling quantum simulation frameworks from diatomic molecules like Lithium Hydride to complex multi-electron compounds relevant to energy cells.
                     </p>
                 </div>
-                <div class="p-8 rounded-2xl bg-[#2a2a2a] border border-[#383838] space-y-3 shadow-sm">
-                    <div class="text-[#ffcc00] font-bold text-xl">03</div>
+                <div class="p-8 rounded-2xl bg-[#1c1c22] border border-[#2a2a34] space-y-3 shadow-sm neon-box-glow-hover transition-all">
+                    <div class="text-[#ffcc00] font-bold text-xl filter drop-shadow-[0_0_6px_rgba(255,204,0,0.5)]">03</div>
                     <h3 class="text-xl font-bold text-white">Quantum Error Mitigation</h3>
                     <p class="text-[#a1a1aa] text-sm leading-relaxed">
                         Researching active techniques to preserve coherence and minimize decoherence errors in noisy intermediate-scale quantum (NISQ) devices.
                     </p>
                 </div>
-                <div class="p-8 rounded-2xl bg-[#2a2a2a] border border-[#383838] space-y-3 shadow-sm">
-                    <div class="text-[#ffcc00] font-bold text-xl">04</div>
+                <div class="p-8 rounded-2xl bg-[#1c1c22] border border-[#2a2a34] space-y-3 shadow-sm neon-box-glow-hover transition-all">
+                    <div class="text-[#ffcc00] font-bold text-xl filter drop-shadow-[0_0_6px_rgba(255,204,0,0.5)]">04</div>
                     <h3 class="text-xl font-bold text-white">Open Source Quantum Tools</h3>
                     <p class="text-[#a1a1aa] text-sm leading-relaxed">
                         Building accessible software toolkits and simulation pipelines to empower students and researchers entering the field of quantum chemistry.
@@ -241,16 +285,16 @@
 
         <!-- Contact Section -->
         <section id="contact" class="space-y-8 pt-8">
-            <div class="border-l-4 border-[#ffcc00] pl-4 space-y-2">
-                <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-white">Contact</h2>
+            <div class="border-l-4 border-[#ffcc00] pl-4 space-y-2 filter drop-shadow-[0_0_6px_rgba(255,204,0,0.5)]">
+                <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-3d-heading">Contact</h2>
                 <p class="text-[#f4f4f5] text-base md:text-lg leading-relaxed max-w-2xl">
                     I am always open to discussing theoretical physics, quantum computing architectures, potential academic partnerships, or collaborative research initiatives. Feel free to reach out directly through email or phone.
                 </p>
             </div>
 
             <div class="grid md:grid-cols-2 gap-6">
-                <a href="mailto:mkrtchyan.systems@gmail.com" class="p-8 rounded-3xl bg-[#2a2a2a] border-2 border-[#383838] hover:border-[#ffcc00] transition-all flex items-center gap-6 group shadow-sm">
-                    <div class="w-16 h-16 rounded-2xl bg-[#ffcc00]/15 flex items-center justify-center text-[#ffcc00] group-hover:bg-[#ffcc00] group-hover:text-[#212121] transition-all text-xl font-bold shrink-0">
+                <a href="mailto:mkrtchyan.systems@gmail.com" class="p-8 rounded-3xl bg-[#1c1c22] border-2 border-[#2a2a34] hover:border-[#ffcc00] transition-all flex items-center gap-6 group shadow-sm neon-box-glow-hover">
+                    <div class="w-16 h-16 rounded-2xl bg-[#ffcc00]/15 flex items-center justify-center text-[#ffcc00] group-hover:bg-[#ffcc00] group-hover:text-[#141417] transition-all text-xl font-bold shrink-0 filter drop-shadow-[0_0_8px_rgba(255,204,0,0.4)]">
                         @
                     </div>
                     <div>
@@ -259,8 +303,8 @@
                     </div>
                 </a>
 
-                <a href="tel:+374044221640" class="p-8 rounded-3xl bg-[#2a2a2a] border-2 border-[#383838] hover:border-[#ffcc00] transition-all flex items-center gap-6 group shadow-sm">
-                    <div class="w-16 h-16 rounded-2xl bg-[#ffcc00]/15 flex items-center justify-center text-[#ffcc00] group-hover:bg-[#ffcc00] group-hover:text-[#212121] transition-all text-xl font-bold shrink-0">
+                <a href="tel:+374044221640" class="p-8 rounded-3xl bg-[#1c1c22] border-2 border-[#2a2a34] hover:border-[#ffcc00] transition-all flex items-center gap-6 group shadow-sm neon-box-glow-hover">
+                    <div class="w-16 h-16 rounded-2xl bg-[#ffcc00]/15 flex items-center justify-center text-[#ffcc00] group-hover:bg-[#ffcc00] group-hover:text-[#141417] transition-all text-xl font-bold shrink-0 filter drop-shadow-[0_0_8px_rgba(255,204,0,0.4)]">
                         📞
                     </div>
                     <div>
@@ -272,8 +316,8 @@
 
             <!-- Social Media Buttons -->
             <div class="grid md:grid-cols-2 gap-6 pt-2">
-                <a href="https://www.instagram.com/david_mkrtchyan2010/?hl=en" target="_blank" class="p-8 rounded-3xl bg-[#2a2a2a] border-2 border-[#383838] hover:border-[#ffcc00] transition-all flex items-center gap-6 group shadow-sm">
-                    <div class="w-16 h-16 rounded-2xl bg-[#ffcc00]/15 flex items-center justify-center text-[#ffcc00] group-hover:bg-[#ffcc00] group-hover:text-[#212121] transition-all shrink-0">
+                <a href="https://www.instagram.com/david_mkrtchyan2010/?hl=en" target="_blank" class="p-8 rounded-3xl bg-[#1c1c22] border-2 border-[#2a2a34] hover:border-[#ffcc00] transition-all flex items-center gap-6 group shadow-sm neon-box-glow-hover">
+                    <div class="w-16 h-16 rounded-2xl bg-[#ffcc00]/15 flex items-center justify-center text-[#ffcc00] group-hover:bg-[#ffcc00] group-hover:text-[#141417] transition-all shrink-0 filter drop-shadow-[0_0_8px_rgba(255,204,0,0.4)]">
                         <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24">
                             <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
                         </svg>
@@ -284,8 +328,8 @@
                     </div>
                 </a>
 
-                <a href="https://github.com/DMkrtchyan2010" target="_blank" class="p-8 rounded-3xl bg-[#2a2a2a] border-2 border-[#383838] hover:border-[#ffcc00] transition-all flex items-center gap-6 group shadow-sm">
-                    <div class="w-16 h-16 rounded-2xl bg-[#ffcc00]/15 flex items-center justify-center text-[#ffcc00] group-hover:bg-[#ffcc00] group-hover:text-[#212121] transition-all shrink-0">
+                <a href="https://github.com/DMkrtchyan2010" target="_blank" class="p-8 rounded-3xl bg-[#1c1c22] border-2 border-[#2a2a34] hover:border-[#ffcc00] transition-all flex items-center gap-6 group shadow-sm neon-box-glow-hover">
+                    <div class="w-16 h-16 rounded-2xl bg-[#ffcc00]/15 flex items-center justify-center text-[#ffcc00] group-hover:bg-[#ffcc00] group-hover:text-[#141417] transition-all shrink-0 filter drop-shadow-[0_0_8px_rgba(255,204,0,0.4)]">
                         <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24">
                             <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                         </svg>
@@ -301,7 +345,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="border-t border-[#333333] py-10 text-center text-xs text-[#a1a1aa] relative z-10 bg-[#212121]">
+    <footer class="border-t border-[#2a2a34] py-10 text-center text-xs text-[#a1a1aa] relative z-10 bg-[#141417]">
         <p>© 2026 Mkrtchyan David. All rights reserved. Theoretical Physics & Quantum Computing.</p>
     </footer>
 
